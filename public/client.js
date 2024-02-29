@@ -55,7 +55,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     };
 
 // Handle signaling server messages and WebRTC signaling here
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect(window.location.origin);
 
 // Listen for remote ICE candidates and add them to the peer connection
 socket.on('candidate', candidate => {
